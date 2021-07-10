@@ -2,7 +2,7 @@
     "tests": [
       {
         "name": "named_tuple_test",
-        "setup": "sudo -H pip3 install pytest faker",
+        "setup": "sudo -H pip3 install pytest faker matplotlib pandas",
         "run": "pytest -vv",
         "input": "",
         "output": "",
