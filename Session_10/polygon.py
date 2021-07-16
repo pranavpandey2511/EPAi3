@@ -56,7 +56,7 @@ class Polygon:
     def perimeter(self):
         """Perimeter of the polygon"""
         return (self._n_edges * self.edge_length)
-        
+
     def __repr__(self):
         return f"Polygon(n_edges: {self.n_edges}, circumradius: {self.circumradius})"
 
@@ -67,7 +67,7 @@ class Polygon:
         else:
             return False
 
- 
+
     def __eq__(self, poly):
         """Provides ability to compare two objects for euality (==)."""
         if (self.n_edges == poly.n_edges) and (self.circumradius == poly.circumradius): # if both number of edges and circumradius is equal then return True

@@ -4,7 +4,7 @@ from functools import reduce, lru_cache
 from polygon import Polygon
 
 class PolyList:
-    """Custom polygon sequence containing polygons where maximum number of edges in a polygon is given 
+    """Custom polygon sequence containing polygons where maximum number of edges in a polygon is given
     by n_edges_max  and circumradius for all polygons is is given by circumradius and is same for all polygons"
     """
     def __init__(self, n_edges_max: int, circumradius: float):
@@ -25,7 +25,7 @@ class PolyList:
             idx = index.indices(self._n_edges_max)
             rng = range(*idx)
             return [self._polygon(self,n) for n in rng]
-    
+
     @property
     def most_efficient(self):
         """Most efficient polygon in terms of area:perimeter ratio.
@@ -35,14 +35,13 @@ class PolyList:
             all_polys[n] = self._polygon(self,n)
         all_polys = sorted(all_polys.values(), key= lambda poly: (poly.area/poly.perimeter))
         return all_polys[-1]
-        
-        
+
     @staticmethod
-    @lru_cache(2**10)        
+    @lru_cache(2**10)
     def _polygon(self, n_edges):
         n_edges += 3 # First is element with 3 sides, second is with 4 sides etc.
         return Polygon(n_edges=n_edges, circumradius = self._circumradius)
-    
+
     def __len__(self):
         return self._len_edges_max - 2
     def __repr__(self):

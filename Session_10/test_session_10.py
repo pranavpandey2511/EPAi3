@@ -53,6 +53,7 @@ def test_session10_readme_proper_description():
     f.close()
     for c in README_CONTENT_CHECK_FOR:
         if c not in content:
+            print(c)
             READMELOOKSGOOD = False
             pass
     assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your README.md file"
@@ -80,7 +81,7 @@ def test_polygon_indentations():
         assert len(space) % 4 == 2, "Your script contains misplaced indentations"
         assert len(re.sub(r'[^ ]', '', space)) % 4 == 0, "Your code indentation does not follow PEP8 guidelines"
 
-def test_pol_list_indentations():
+def test_poly_list_indentations():
     """
     Method checks for proper indentations
     Returns pass if used four spaces for each level of syntactically significant indenting.
