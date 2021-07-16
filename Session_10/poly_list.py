@@ -42,8 +42,7 @@ class PolyList:
     def _polygon(self, n_edges):
         n_edges += 3 # First is element with 3 sides, second is with 4 sides etc.
         return Polygon(n_edges=n_edges, circumradius = self._circumradius)
-            
-        
+    
     def __len__(self):
         return self._len_edges_max - 2
     def __repr__(self):
