@@ -16,7 +16,7 @@ class PolyList:
         if isinstance(index, int):
             # single item requested
             if index < 0:
-                index = self._n_edges_max + index
+                index = self._n_edges_max + index -2
             if index < 0 or index > self._n_edges_max - 3:
                 raise IndexError(":: Index out of bounds ::")
             return self._polygon(self,index)
@@ -43,6 +43,6 @@ class PolyList:
         return Polygon(n_edges=n_edges, circumradius = self._circumradius)
 
     def __len__(self):
-        return self._len_edges_max - 2
+        return self._n_edges_max - 2
     def __repr__(self):
         return (str(self[:]))

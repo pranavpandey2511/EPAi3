@@ -1,14 +1,14 @@
 {
-    "tests": [
-      {
-        "name": "named_tuple_test",
-        "setup": "sudo -H pip3 install pytest faker matplotlib pandas",
-        "run": "cd Session_10/ && pytest -vv",
-        "input": "",
-        "output": "",
-        "comparison": "included",
-        "timeout": 40,
-        "points": 1000
-      }
-    ]
-  }
+  "tests": [
+    {
+      "name": "sequence_test",
+      "setup": "sudo -H pip3 install pytest faker matplotlib pandas",
+      "run": "cd Session_10/ && pytest -vv",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 80,
+      "points": 1000
+    }
+  ]
+}

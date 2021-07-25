@@ -111,3 +111,39 @@ def test_poly_list_function_name_had_cap_letter():
     functions = inspect.getmembers(poly_list, inspect.isfunction)
     for function in functions:
         assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
+
+def test_poly_class():
+    poly1 = Polygon(4, 4)
+    poly2 = Polygon(5, 3)
+
+    assert poly1.area == 32.0, "area calculated is wrong"
+    assert poly2.area == 21.398771616640957, "area calculated is wrong"
+
+    assert poly1.perimeter == 22.62741699796952, "perimeter calculated is wrong"
+    assert poly2.perimeter == 17.633557568774194, "perimeter calculated is wrong"
+
+    assert poly1.apothem == 2.8284271247461903, "apothem value is wrong"
+    assert poly2.apothem == 2.4270509831248424, "apothem value is wrong" 
+
+    assert poly1.circumradius == 4, "Circumradius is not correct"
+    assert poly2.circumradius == 3, "Circumradius is not correct"
+
+    assert poly1.edge_length == 5.65685424949238, "Edge length is not correct"
+    assert poly2.edge_length == 3.526711513754839, "Edge length is not correct"
+
+    poly3 = Polygon(4,4)
+
+    assert poly1 == poly3, "Equality check doesn't work properly"
+    assert poly2 > poly1, "Greater than check doesn't work properly"
+
+def test_polygon_sequence():
+    my_poly = PolyList(7,7)
+
+    len(my_poly) == 5, "Length of the sequence is incorrect"
+
+    my_poly.most_efficient == Polygon(7, 7), "Most efficient item in the sequence is not correct."
+    my_poly[0] == Polygon(3,7), "First element in the sequence is incorrect"
+    my_poly[-1] == Polygon(7,7), "Last element in the sequence is incorrect"
+    my_poly[-2] == Polygon(6,7), "Second to last element in the sequence is incorrect"
+    my_poly[-3] == Polygon(5,7), "Third to last element in the sequence is incorrect"
+    my_poly[-4] == Polygon(4,7), "Fourth to last element in the sequence is incorrect"
