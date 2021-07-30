@@ -3,7 +3,6 @@ import operator
 from functools import reduce, lru_cache
 from polygon import Polygon
 
-
 class PolygonsIterator:
     '''
     This class is to make the Polygon sequence class (PolyList) of type Iterator.
@@ -14,7 +13,7 @@ class PolygonsIterator:
         self._n_edges_max = n_edges_max
         self._circumradius = circumradius
         self._index = 3
-        
+
     def __iter__(self):
         return self
 
@@ -34,7 +33,7 @@ class PolyList:
         self._n_edges_max = n_edges_max
         self._circumradius = circumradius
         self._max_efficient = None
-
+    
     def __len__(self):
         return self._n_edges_max - 2
 
