@@ -17,7 +17,7 @@ class PolygonsIterator:
         
     def __iter__(self):
         return self
-    
+
     def __next__(self):
         if self._index > self._n_edges_max:
             raise StopIteration
@@ -25,7 +25,6 @@ class PolygonsIterator:
             result = Polygon(self._index, self._circumradius)
             self._index += 1
             return result
-        
 class PolyList:
     """Custom polygon sequence containing polygons where maximum number of edges in a polygon is given
     by n_edges_max  and circumradius for all polygons is is given by circumradius and is same for all polygons"
