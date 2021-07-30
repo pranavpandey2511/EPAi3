@@ -35,12 +35,11 @@ class PolyList:
         self._n_edges_max = n_edges_max
         self._circumradius = circumradius
         self._max_efficient = None
-    
-    
+
     def __len__(self):
         return self._n_edges_max - 2
-    
-    
+
+
     def __repr__(self):
         return (str(self[:]))
 
@@ -53,8 +52,5 @@ class PolyList:
         """Most efficient polygon in terms of area:perimeter ratio.
         """
         if self._max_efficient is None:
-            self._max_efficient = sorted(PolygonsIterator(self._n_edges_max, self._circumradius), 
-                                     key = lambda poly: poly.area/poly.perimeter,
-                                    reverse=True)[0] #get the first element from the sorted list
+            self._max_efficient = sorted(PolygonsIterator(self._n_edges_max, self._circumradius), key = lambda poly: poly.area/poly.perimeter, reverse=True)[0] #get the first element from the sorted list
         return self._max_efficient
-

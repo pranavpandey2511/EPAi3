@@ -141,11 +141,16 @@ def test_polygon_sequence():
 
     len(my_poly) == 5, "Length of the sequence is incorrect"
 
+
+
     my_poly.most_efficient == Polygon(7, 7), "Most efficient item in the sequence is not correct."
-    my_poly[0] == Polygon(3,7), "First element in the sequence is incorrect"
-    my_poly[-1] == Polygon(7,7), "Last element in the sequence is incorrect"
-    my_poly[-2] == Polygon(6,7), "Second to last element in the sequence is incorrect"
-    my_poly[-3] == Polygon(5,7), "Third to last element in the sequence is incorrect"
-    my_poly[-4] == Polygon(4,7), "Fourth to last element in the sequence is incorrect"
+    
+    my_poly = iter(my_poly)
+    first_poly = next(my_poly)
+    first_poly == Polygon(3,7), "First element in the sequence is incorrect"
+    next(my_poly) == Polygon(7,7), "Last element in the sequence is incorrect"
+    next(my_poly) == Polygon(6,7), "Second to last element in the sequence is incorrect"
+    next(my_poly) == Polygon(5,7), "Third to last element in the sequence is incorrect"
+    next(my_poly) == Polygon(4,7), "Fourth to last element in the sequence is incorrect"
 
 
