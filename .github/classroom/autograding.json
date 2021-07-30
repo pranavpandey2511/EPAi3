@@ -3,12 +3,12 @@
     {
       "name": "sequence_test",
       "setup": "sudo -H pip3 install pytest faker matplotlib pandas",
-      "run": "cd Session_10/ && pytest -vv",
+      "run": "cd Session_12/ && pytest -vv",
       "input": "",
       "output": "",
       "comparison": "included",
       "timeout": 80,
-      "points": 1000
+      "points": 500
     }
   ]
 }
