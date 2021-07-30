@@ -33,7 +33,7 @@ class PolyList:
         self._n_edges_max = n_edges_max
         self._circumradius = circumradius
         self._max_efficient = None
-    
+
     def __len__(self):
         return self._n_edges_max - 2
 

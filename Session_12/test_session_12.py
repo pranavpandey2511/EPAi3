@@ -25,14 +25,14 @@ README_CONTENT_CHECK_FOR = [
     'n_edges_max',
 ]
 
-def test_session10_readme_exists():
+def test_session12_readme_exists():
     """
     Method checks if there is a README.md file. 
     failure_message: "README.md file missing!"  
     """
     assert os.path.isfile("README.md"), "README.md file missing!"
 
-def test_session10_readme_500_words():
+def test_session12_readme_500_words():
     """
     Method checks if there are atleast 500 words in the README.md file
     failures_message: Make your README.md file interesting! Add atleast 500 words
@@ -42,7 +42,7 @@ def test_session10_readme_500_words():
     readme.close()
     assert len(readme_words) >= 500, "Make your README.md file interesting! Add atleast 500 words"
 
-def test_session10_readme_proper_description():
+def test_session12_readme_proper_description():
     """
     Method checks if all the functions are described in the README.md file
     failures_message: You have not described all the functions/classes well in your README.md file
@@ -58,7 +58,7 @@ def test_session10_readme_proper_description():
             pass
     assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your README.md file"
 
-def test_session10_readme_file_for_more_than_10_hashes():
+def test_session12_readme_file_for_more_than_10_hashes():
     """
     Method checks if README.md file has atleast 10 '#' (indentations)
     failures_message: You have not described all the functions/classes well in your README.md file 
